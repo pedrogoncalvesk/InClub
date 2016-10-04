@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - 2.2.5
+before_install: 
+  - gem install rack -v '2.0.1'
+  - gem install -v 1.10.6 bundler --no-rdoc --no-ri
+script:
+- bundle exec rake spec
+- bundle exec rake features
