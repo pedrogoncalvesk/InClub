@@ -24,7 +24,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * Production
+
 <a href="https://inclub.herokuapp.com/">Heroku</a>
 
 * Project management tool
+
 <a href="https://www.pivotaltracker.com/n/projects/1874393">Pivotal Tracker</a>
