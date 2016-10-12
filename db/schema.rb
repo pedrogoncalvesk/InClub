@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161012230219) do
+ActiveRecord::Schema.define(version: 20161012231053) do
 
   create_table "locals", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(version: 20161012230219) do
     t.boolean  "status"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "organizations", force: :cascade do |t|
+    t.string   "name"
+    t.bigint   "telephone"
+    t.string   "email"
+    t.string   "description"
+    t.string   "logo"
+    t.string   "url"
+    t.integer  "local_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["local_id"], name: "index_organizations_on_local_id"
   end
 
   create_table "roles", force: :cascade do |t|
