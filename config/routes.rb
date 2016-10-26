@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :events
+  resources :interests
+  resources :users
   resources :types
   resources :organizations
   resources :locals
