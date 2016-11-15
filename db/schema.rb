@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161115041718) do
+ActiveRecord::Schema.define(version: 20161115155633) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -19,8 +19,6 @@ ActiveRecord::Schema.define(version: 20161115041718) do
     t.boolean  "status"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "local"
-    t.integer  "organization"
     t.integer  "local_id"
     t.integer  "organization_id"
   end
