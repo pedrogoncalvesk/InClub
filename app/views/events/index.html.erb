@@ -1,6 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Events</h1>
+<h2>Search</h2>
+<%= form_tag(events_path, :method => "get", id: "search-form") do %>
+  <div class="field">
+    <%= text_field_tag :name, params[:name], placeholder: "Name" %>
+    <%= select_tag "local", options_from_collection_for_select(Local.all, "id", "name", params[:local]), include_blank: true %>
+    <%= select_tag "organization", options_from_collection_for_select(Organization.all, "id", "name", params[:organization]), include_blank: true %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Search" %>
+  </div>
+<% end %>
 
 <table>
   <thead>
