@@ -18,8 +18,8 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.local_id %></td>
-        <td><%= event.organization_id %></td>
+        <td><%= event.local.name %></td>
+        <td><%= event.organization.name %></td>
         <td><%= event.name %></td>
         <td><%= event.description %></td>
         <td><%= event.date %></td>

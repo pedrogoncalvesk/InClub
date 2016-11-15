@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= f.label :local_id %>
-    <%= f.number_field :local_id %>
+    <%= f.collection_select :local_id, Local.all, :id, :name %>
   </div>
 
   <div class="field">
     <%= f.label :organization_id %>
-    <%= f.number_field :organization_id %>
+    <%= f.collection_select :organization_id, Local.all, :id, :name %>
   </div>
 
   <div class="field">
