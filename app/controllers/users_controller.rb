@@ -71,4 +71,10 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:role_id, :name, :telephone, :email, :status, :last_login, :password, :password_confirmation)
     end
+    #não sei se isso é aqui
+    ##no tutorial parei na autenticação de senha - listagem 4##
+    @user = User.find_by(email: params[:session][:email].downcase)
+                if @user && user.authenticate(params[:session][:password])
+                          sign_in @user
+   end 
 end
