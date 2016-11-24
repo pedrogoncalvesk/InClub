@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20161115155633) do
 
+
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -21,6 +22,20 @@ ActiveRecord::Schema.define(version: 20161115155633) do
     t.datetime "updated_at",      null: false
     t.integer  "local_id"
     t.integer  "organization_id"
+  end
+
+  create_table "events_types", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "event_id"
+    t.integer  "type_id"
+  end
+
+  create_table "eventtypes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "event_id"
+    t.integer  "type_id"
   end
 
   create_table "interests", force: :cascade do |t|

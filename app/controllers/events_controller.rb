@@ -4,7 +4,11 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    if params[:name] || params[:local] || params[:organization]
+      @events = Event.search(params[:name],params[:local],params[:organization])
+    else
+      @events = Event.all
+    end
   end
 
   # GET /events/1
@@ -69,6 +73,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:local_id, :organization_id, :name, :description, :date, :status)
+      params.require(:event).permit(:local_id, :organization_id, :name, :description, :date, :status, {:type_ids => []})
     end
 end

@@ -41,6 +41,14 @@
     <%= f.check_box :status %>
   </div>
 
+  <div class="field">
+    <%= hidden_field_tag "event[type_ids][]", nil %>
+    <% Type.all.each do |t| %>
+      <%= check_box_tag "event[type_ids][]", t.id, @event.type_ids.include?(t.id) %>
+      <%= t.name %><br/>
+    <% end %>
+  <div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
