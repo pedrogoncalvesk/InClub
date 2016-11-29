@@ -1,1 +1,1 @@
-release: bundle exec rails db:migrate RAILS_ENV=test
+release: bundle exec rails db:migrate
